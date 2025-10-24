@@ -33,7 +33,7 @@ public class AnalyticsCounter {
 			line = reader.readLine();	// get another symptom
 		}
 		
-		// next generate output
+		// next generate output trdt
 		FileWriter writer = new FileWriter ("result.out");
 		writer.write("headache: " + headacheCount + "\n");
 		writer.write("rash: " + rashCount + "\n");
