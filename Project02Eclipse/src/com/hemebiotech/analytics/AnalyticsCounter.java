@@ -15,29 +15,29 @@ public class AnalyticsCounter {
 		String line = reader.readLine();
 
 		int i = 0;	// set i to 0
-		int headCount = 0;	// counts headaches
+		int headacheCount = 0;	// counts headaches
 		while (line != null) {
 			i++;	// increment i
 			System.out.println("symptom from file: " + line);
 			if (line.equals("headache")) {
-				headCount++;
-				System.out.println("number of headaches: " + headCount);
+				headacheCount++;
+				System.out.println("number of headaches: " + headacheCount);
 			}
-			else if (line.equals("rush")) {
+			else if (line.equals("rash")) {
 				rashCount++;
 			}
-			else if (line.contains("pupils")) {
+			else if (line.equals("dilated pupils")) {
 				pupilCount++;
 			}
 
 			line = reader.readLine();	// get another symptom
 		}
 		
-		// next generate output trdt
+		// next generate output 
 		FileWriter writer = new FileWriter ("result.out");
 		writer.write("headache: " + headacheCount + "\n");
 		writer.write("rash: " + rashCount + "\n");
-		writer.write("dialated pupils: " + pupilCount + "\n");
+		writer.write("dilated pupils: " + pupilCount + "\n");
 		writer.close();
 	}
 }
