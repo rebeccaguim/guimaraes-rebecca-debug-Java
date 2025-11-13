@@ -16,8 +16,8 @@ public class AnalyticsCounter {
     /**
      * Constructor that injects the reader and writer.
      *
-     * @param reader the symptom data reader
-     * @param writer the symptom data writer
+     * @param reader The symptom data reader.
+     * @param writer The symptom data writer.
      */
     public AnalyticsCounter(ISymptomReader reader, ISymptomWriter writer) {
         this.reader = reader;
@@ -27,17 +27,17 @@ public class AnalyticsCounter {
     /**
      * Retrieves the raw list of symptoms from the reader.
      *
-     * @return a list of symptoms (possibly with duplicates)
+     * @return A list of symptoms (possibly with duplicates).
      */
     public List<String> getSymptoms() {
         return reader.getSymptoms();
     }
 
     /**
-     * Counts how many times each symptom occurs.
+     * Counts how many times each symptom occurs in the list.
      *
-     * @param symptoms the raw list of symptoms
-     * @return a map with symptom names as keys and their occurrence counts as values
+     * @param symptoms A list of raw symptom strings.
+     * @return A map with symptom names as keys and their occurrence counts as values.
      */
     public Map<String, Integer> countSymptoms(List<String> symptoms) {
         Map<String, Integer> counts = new TreeMap<>();
@@ -52,26 +52,26 @@ public class AnalyticsCounter {
 
     /**
      * Sorts the symptoms alphabetically.
-     * Since TreeMap keeps keys sorted, no extra logic is needed.
+     * Since TreeMap maintains sorted keys, this returns a new sorted map.
      *
-     * @param symptoms map of symptoms and counts
-     * @return a new sorted map
+     * @param symptoms A map of symptoms and their counts.
+     * @return A new TreeMap sorted by symptom name.
      */
     public Map<String, Integer> sortSymptoms(Map<String, Integer> symptoms) {
-        return new TreeMap<>(symptoms); // Already sorted
+        return new TreeMap<>(symptoms);
     }
 
     /**
      * Writes the symptom data to the output using the writer instance.
      *
-     * @param symptoms the map of sorted symptom data
+     * @param symptoms The sorted map of symptom data to write.
      */
     public void writeSymptoms(Map<String, Integer> symptoms) {
         try {
             writer.writeSymptoms(symptoms);
-            System.out.println(" Result written to output.");
+            System.out.println("Result written to output.");
         } catch (IOException e) {
-            System.err.println(" Error writing output: " + e.getMessage());
+            System.err.println("Error writing output: " + e.getMessage());
         }
     }
 }
