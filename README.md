@@ -1,5 +1,5 @@
 # Project_DA_Java_EN_Come_to_the_Rescue_of_a_Java_Application
-# Java Symptom Analytics – Project 2 (OpenClassrooms)
+ Java Symptom Analytics – Project 2 (OpenClassrooms)
 
 ##  Training Context
 
@@ -15,4 +15,4 @@ In this scenario, I was hired as an intern at **Heme Biotech**, a fictional phar
 The objective is to correct and refactor an existing Java application that:
 -  Reads symptom data from a text file (`symptoms.txt`)
 -  Counts the number of times each symptom appears
--  Generates a new output file named `result.out` that lists each symptom in **alphabetical order**, followed by the number of occurrences
+-  Generates a new output file named `result.out` that lists each symptom in **alphabetical order**, followed by the number of occurrences.
